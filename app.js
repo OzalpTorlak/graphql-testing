@@ -5,6 +5,10 @@ const schema = require('./schema/schema.js')
 
 const app = express();
 
+require('dotenv').config()
+
+const db = require('./helpers/db.js')();
+
 app.use('/graphql', expressGraphQL({
     schema,
     graphiql : true
