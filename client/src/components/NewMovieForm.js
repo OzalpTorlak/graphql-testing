@@ -34,7 +34,7 @@ class NewMovieForm extends Component {
                                     year: parseInt(this.state.year, 10),
                                     directorId : this.state.directorId
                                 },
-                                refetchQueries: [{ query: getMoviesQuery}]
+                                refetchQueries: [{ query: getMoviesQuery}] //apollo client tarafından sayfa yeniden refetch oluyor ve eklenilen movie'ler ekrana geliyor.
                             });
                         } }>
                             <div>
