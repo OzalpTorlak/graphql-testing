@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Query, Mutation } from 'react-apollo';
 
-import {getDirectorsQuery, newMovieMutation} from '../queries/queries'
+import {getDirectorsQuery, newMovieMutation, getMoviesQuery} from '../queries/queries'
 
 
 
@@ -31,9 +31,10 @@ class NewMovieForm extends Component {
                                 variables: {
                                     title : this.state.title,
                                     description : this.state.description,
-                                    year: parseInt(this.state.year),
+                                    year: parseInt(this.state.year, 10),
                                     directorId : this.state.directorId
-                                }
+                                },
+                                refetchQueries: [{ query: getMoviesQuery}]
                             });
                         } }>
                             <div>

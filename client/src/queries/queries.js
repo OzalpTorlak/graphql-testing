@@ -13,8 +13,7 @@ export const getMoviesQuery = gql`
 export const getDirectorsQuery = gql`
     {
         directors{
-                ,
-            name
+            name,
         }
     }
 `;
@@ -26,8 +25,8 @@ export const newMovieMutation = gql `
         $description:String, 
         $year:Int!, 
         $directorId:ID!){
-        addMovie(t
-            itle:$title, 
+        addMovie(
+            title:$title, 
             description:$description, 
             year:$year, 
             directorId:$directorId)
