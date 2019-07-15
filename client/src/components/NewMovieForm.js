@@ -24,7 +24,8 @@ class NewMovieForm extends Component {
         return (
             <Mutation mutation={newMovieMutation}>
                 { (addMovie, {loading, error}) => (
-                    <div>
+                    <div className="container" data-state="New Movie">
+                        <div className="device" data-view="list">
                         <form onSubmit={ e => {
                             e.preventDefault();
                             addMovie({
@@ -73,6 +74,7 @@ class NewMovieForm extends Component {
                         </form>
                         {loading && <div>Loading</div>}
                         {error && <div>Error...</div>}
+                        </div>
                     </div>
                 )}
             </Mutation>
